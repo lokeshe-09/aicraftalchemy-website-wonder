@@ -59,7 +59,9 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <feature.icon className="h-12 w-12 text-primary mb-4" />
+                <div className="h-12 w-12 text-primary mb-4">
+                  <feature.icon />
+                </div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
@@ -82,7 +84,6 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
       >
         <path
           strokeLinecap="round"
@@ -102,7 +103,6 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
       >
         <path
           strokeLinecap="round"
@@ -122,7 +122,6 @@ const features = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
       >
         <path
           strokeLinecap="round"
