@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       <section className="pt-20 pb-16 md:pt-32 md:pb-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -19,13 +20,12 @@ const Home = () => {
             <span className="text-primary"> AI Innovation</span>
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="text-2xl md:text-3xl text-muted-foreground mb-8 max-w-2xl mx-auto font-semibold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We blend artificial intelligence with creative craftsmanship to deliver
-            cutting-edge solutions that transform businesses.
+            Your Vision, Our Innovation, One Solution
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,6 +69,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -1,89 +1,82 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { Mail, MapPin, Phone, WhatsApp } from "lucide-react";
+import Footer from "../components/Footer";
 
 const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/917661081043`, '_blank');
   };
 
   return (
-    <div className="min-h-screen pt-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get in touch with us to discuss how we can help transform your
-            business with AI solutions.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="min-h-screen">
+      <div className="pt-20 px-4">
+        <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="text-center mb-12"
           >
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-              <p className="text-muted-foreground">
-                We'd love to hear from you. Please fill out the form, and we'll
-                get back to you as soon as possible.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">contact@aicraftalchemy.com</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Address</h3>
-              <p className="text-muted-foreground">
-                123 Innovation Street
-                <br />
-                Tech Valley, CA 94025
-                <br />
-                United States
-              </p>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get in touch with us to discuss how we can help transform your
+              business with AI solutions.
+            </p>
           </motion.div>
 
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="glass-card p-8 rounded-lg max-w-2xl mx-auto"
           >
-            <div className="space-y-4">
-              <Input placeholder="Your Name" required />
-              <Input type="email" placeholder="Your Email" required />
-              <Input placeholder="Subject" required />
-              <Textarea
-                placeholder="Your Message"
-                className="min-h-[150px]"
-                required
-              />
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Mail className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Email</h3>
+                  <a href="mailto:aicraftalchemy@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    aicraftalchemy@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Phone</h3>
+                  <p className="text-muted-foreground">+91 7661081043</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-full">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Address</h3>
+                  <p className="text-muted-foreground">Hyderabad, India</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-full cursor-pointer" onClick={openWhatsApp}>
+                  <WhatsApp className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">WhatsApp</h3>
+                  <p className="text-muted-foreground">Click the icon to chat with us</p>
+                </div>
+              </div>
             </div>
-            <Button type="submit" className="w-full">
-              Send Message
-            </Button>
-          </motion.form>
+          </motion.div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
