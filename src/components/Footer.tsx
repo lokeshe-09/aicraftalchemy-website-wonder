@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, WhatsApp } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
             <div className="flex gap-4">
-              <WhatsApp 
+              <MessageCircle 
                 className="h-6 w-6 cursor-pointer hover:text-primary transition-colors"
                 onClick={openWhatsApp}
               />

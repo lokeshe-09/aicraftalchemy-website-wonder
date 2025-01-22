@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, WhatsApp } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import Footer from "../components/Footer";
 
 const Contact = () => {
@@ -65,7 +65,7 @@ const Contact = () => {
 
               <div className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-full cursor-pointer" onClick={openWhatsApp}>
-                  <WhatsApp className="h-6 w-6 text-primary" />
+                  <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">WhatsApp</h3>

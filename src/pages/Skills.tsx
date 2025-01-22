@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Code, Database, Cloud, Robot, ChartBar } from "lucide-react";
+import { Brain, Code, Database, Cloud, Bot, ChartBar } from "lucide-react";
 import Footer from "../components/Footer";
 
 const Skills = () => {
@@ -64,7 +64,7 @@ const skills = [
   {
     name: "Natural Language Processing",
     description: "Advanced capabilities in processing and analyzing human language, enabling intelligent text analysis and generation.",
-    icon: Robot,
+    icon: Bot,
     technologies: ["BERT", "GPT", "NLP", "Text Analytics"],
   },
   {
